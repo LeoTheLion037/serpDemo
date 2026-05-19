@@ -60,17 +60,6 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## 🌐 Deploy to Vercel
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/YOUR_USERNAME/trend-pulse)
-
-1. Push this repo to GitHub
-2. Import it on [vercel.com](https://vercel.com/)
-3. Add the `SERPAPI_KEY` environment variable in your Vercel project settings
-4. Deploy!
-
----
-
 ## 📡 SerpApi Endpoints Used
 
 | Feature | SerpApi Engine |
@@ -101,12 +90,4 @@ trend-pulse/
 
 ---
 
-## 🔑 API Key Security
-
-- The SerpApi key is stored in `.env.local` and **only used server-side** in Next.js API routes
-- It is **never exposed** to the browser or included in the client bundle
-- `.env.local` is in `.gitignore` by default
-
----
-
-Built for the SerpApi raffle challenge at SaaStr 2025 🎯
+Built for the SerpApi raffle challenge at Tech Ex 2026 🎯
