@@ -486,8 +486,8 @@ export default function HomePage() {
                       <span className="section-badge badge-purple">Google News</span>
                     </div>
                     <div className="news-grid">
-                      {data.news.map((article) => (
-                        <NewsCard key={article.link} article={article} />
+                      {data.news.map((article, i) => (
+                        <NewsCard key={`${i}-${article.link}`} article={article} />
                       ))}
                     </div>
                   </section>
@@ -502,8 +502,8 @@ export default function HomePage() {
                       <span className="section-badge badge-cyan">Google Search</span>
                     </div>
                     <div className="paa-grid">
-                      {data.paa.map((item) => (
-                        <PAAItem key={item.question} item={item} />
+                      {data.paa.map((item, i) => (
+                        <PAAItem key={`${i}-${item.question}`} item={item} />
                       ))}
                     </div>
                   </section>
