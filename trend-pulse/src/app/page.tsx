@@ -193,6 +193,16 @@ export default function HomePage() {
         fetch(`/api/search?q=${encodeURIComponent(q)}`),
       ]);
 
+      // Check for rate limiting first
+      if (trendsRes.status === 429 || newsRes.status === 429 || searchRes.status === 429) {
+        const rateLimited = [trendsRes, newsRes, searchRes].find((r) => r.status === 429);
+        const retry = rateLimited?.headers.get("Retry-After");
+        const mins = retry ? Math.ceil(Number(retry) / 60) : 60;
+        setError(`🚦 Rate limit reached — please wait ~${mins} min before searching again.`);
+        setData(null);
+        return;
+      }
+
       const [trendsJson, newsJson, searchJson] = await Promise.all([
         trendsRes.json(),
         newsRes.json(),
